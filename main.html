@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIU Majors Cup</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <!-- Header -->
+<div class="flex items-center justify-between p-4 bg-gray-800 text-white"> <!-- Header container: flex for side-by-side, justify-between for left/right alignment, padding, background, text color -->
+    <!-- Left: Title -->
+    <div class="text-left">
+        <strong class="text-lg font-bold">CIU Majors Cup</strong> <br>
+        <span class="text-sm">Fleet.games</span>
+    </div>
+
+    <!-- Right: Search + Calendar -->
+    <div class="flex items-center space-x-4">
+        <!-- Search Icon (wrapped in a button for potential clickability; add onclick later if needed) -->
+        <button aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300 hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+        </button>
+        
+        <!-- Calendar Icon with Date Overlay -->
+        <div class="relative inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <span id="current-day" class="absolute inset-0 flex items-end justify-center text-xs font-bold text-white pb-1">16</span>
+        </div>
+    </div>
+</div>
+
+<!-- Navbar -->
+<nav class="bg-gray-900 text-white py-4 px-6 border-b border-gray-700">
+    <ul class="flex space-x-8 justify-center text-sm font-medium">
+        <li>
+            <a href="#" data-section="bracket" class="hover:text-purple-400 transition-colors pb-2">Bracket</a>
+        </li>
+        <li>
+            <a href="#" data-section="table" class="hover:text-purple-400 transition-colors pb-2">Table</a>
+        </li>
+        <li>
+            <a href="#" data-section="fixtures" class="border-b-2 border-purple-400 rounded-full hover:text-purple-400 transition-colors pb-2">Fixtures</a>
+        </li>
+        <li>
+            <a href="#" data-section="team-stats" class="hover:text-purple-400 transition-colors pb-2">Team</a>
+        </li>
+        <li>
+            <a href="#" data-section="player-stats" class="hover:text-purple-400 transition-colors pb-2">Player</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Content Sections -->
+
+<!--BRACKET-->
+<div id="bracket-content" class="hidden p-6 bg-gray-50 min-h-screen">
+    <h2 class="text-2xl font-bold text-gray-800">Bracket Content</h2>
+    <p class="text-gray-600">Tournament bracket here.</p>
+    <!-- Build out your full bracket code here directly in HTML -->
+</div>
+
+<!--TABLE-->
+<div id="table-content" class="hidden p-6 bg-gray-50 min-h-screen">
+    <h2 class="text-2xl font-bold text-gray-800">Table Content</h2>
+    <p class="text-gray-600">Standings table here.</p>
+    <!-- Build out your full standings table code here directly in HTML -->
+</div>
+
+<!--FIXTURES-->
+<div id="fixtures-content" class="p-0 bg-gray-50 min-h-screen">
+    <!--navbar for date-->
+    <div class="bg-gray-900 text-white py-4 px-6 border-b border-gray-700">
+  <ul class="flex justify-between items-center text-sm font-medium w-full">
+    <li class="flex items-center">
+      <div class="border border-gray-500 rounded p-2 inline-flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </div>
+    </li>
+    <li class="absolute left-1/2 transform -translate-x-1/2">Today</li>
+    <li class="flex items-center">
+      <div class="border border-gray-500 rounded p-2 inline-flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- Fixtures List -->
+ <div class="bg-gray-700 text-white m-2 rounded-md p-4">
+   <!--Fixture-->
+    <div class="flex items-center justify-between p-2 text-sm">
+        <!--teamA-->
+        <div class="flex items-center gap-2">
+            <span>Software E.</span>
+            <img src="
+            " alt="teamA">
+            
+        </div>
+        <!--time-->
+        <div>2:30 <br> PM</div>
+        <!--teamB-->
+        <div class="flex items-center gap-2">
+            <img src="
+            " alt="teamB">
+            <span>Electrical E.</span>
+        </div>
+    </div>
+
+    <!--Fixture-->
+    <div class="flex items-center justify-between p-2 text-sm">
+        <!--teamA-->
+        <div class="flex items-center gap-2">
+            <span>Nursing</span>
+            <img src="
+            " alt="teamA">
+            
+        </div>
+        <!--time-->
+        <div>2:30 <br> PM</div>
+        <!--teamB-->
+        <div class="flex items-center gap-2">
+            <img src="
+            " alt="teamB">
+            <span>Artificial I.</span>
+        </div>
+    </div>
+
+    <!--Fixture-->
+    <div class="flex items-center justify-between p-2 text-sm">
+        <!--teamA-->
+        <div class="flex items-center gap-2">
+            <span>Economics</span>
+            <img src="
+            " alt="teamA">
+            
+        </div>
+        <!--time-->
+        <div>2:30 <br> PM</div>
+        <!--teamB-->
+        <div class="flex items-center gap-2">
+            <img src="
+            " alt="teamB">
+            <span>Medicine</span>
+        </div>
+    </div>
+ </div>
+</div>
+
+<!--TEAM STATS-->
+<div id="team-stats-content" class="hidden p-6 bg-gray-50 min-h-screen">
+    <h2 class="text-2xl font-bold text-gray-800">Team Stats Content</h2>
+    <p class="text-gray-600">Team statistics here.</p>
+    <!-- Build out your full team stats code here directly in HTML -->
+</div>
+
+<!--PLAYER STATS-->
+<div id="player-stats-content" class="hidden p-6 bg-gray-50 min-h-screen">
+    <h2 class="text-2xl font-bold text-gray-800">Player Stats Content</h2>
+    <p class="text-gray-600">Player statistics here.</p>
+    <!-- Build out your full player stats code here directly in HTML -->
+</div>
+
+<!-- JS for Navbar Active State and Section Switching -->
+<script>
+  // Navbar links
+  const navLinks = document.querySelectorAll('nav a');
+  
+  // All content sections
+  const contentSections = document.querySelectorAll('[id$="-content"]');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent page navigation
+      
+      // Remove active class/border from all
+      navLinks.forEach(l => {
+        l.classList.remove('border-b-2', 'border-purple-400', 'rounded-full');
+      });
+      
+      // Add to clicked
+      link.classList.add('border-b-2', 'border-purple-400', 'rounded-full');
+      
+      // Hide all sections
+      contentSections.forEach(sec => sec.classList.add('hidden'));
+      
+      // Show targeted section
+      const section = link.getAttribute('data-section');
+      const targetSection = document.getElementById(`${section}-content`);
+      if (targetSection) {
+        targetSection.classList.remove('hidden');
+      }
+    });
+  });
+</script>
+
+<!--To make the calendar show today's date-->
+<script>
+  const daySpan = document.getElementById('current-day');
+  const today = new Date().getDate();
+  daySpan.textContent = today;
+</script>
+</body>
+</html>
