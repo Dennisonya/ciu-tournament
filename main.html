@@ -6,19 +6,33 @@
     <title>CIU Majors Cup</title>
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      }
+    }
+  }
+}
+
+  </script>
 </head>
-<body>
+<body >
    <!-- Header -->
-<div class="flex items-center justify-between p-4 bg-gray-800 text-white"> <!-- Header container: flex for side-by-side, justify-between for left/right alignment, padding, background, text color -->
+<div class="flex items-center justify-between p-4 bg-black text-white">
     <!-- Left: Title -->
     <div class="text-left">
-        <strong class="text-lg font-bold">CIU Majors Cup</strong> <br>
-        <span class="text-sm">Fleet.games</span>
+        <strong class="text-lg font-bold font-poppins">CIU Majors Cup</strong> <br>
+        <span class="text-sm font-poppins ">Fleet.games</span>
     </div>
 
     <!-- Right: Search + Calendar -->
     <div class="flex items-center space-x-4">
-        <!-- Search Icon (wrapped in a button for potential clickability; add onclick later if needed) -->
         <button aria-label="Search">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-300 hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -30,13 +44,13 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            <span id="current-day" class="absolute inset-0 flex items-end justify-center text-xs font-bold text-white pb-1">16</span>
+            <span id="current-day" class=" font-poppins absolute inset-0 flex items-end justify-center text-xs font-bold text-white pb-1">16</span>
         </div>
     </div>
 </div>
 
 <!-- Navbar -->
-<nav class="bg-gray-900 text-white py-4 px-6 border-b border-gray-700">
+<nav class="font-poppins bg-black text-white py-4 px-6 border-b border-gray-700">
     <ul class="flex space-x-8 justify-center text-sm font-medium">
         <li>
             <a href="#" data-section="bracket" class="hover:text-purple-400 transition-colors pb-2">Bracket</a>
@@ -62,152 +76,532 @@
 <div id="bracket-content" class="hidden p-6 bg-gray-50 min-h-screen">
     <h2 class="text-2xl font-bold text-gray-800">Bracket Content</h2>
     <p class="text-gray-600">Tournament bracket here.</p>
-    <!-- Build out your full bracket code here directly in HTML -->
 </div>
 
 <!--TABLE-->
-<div id="table-content" class="hidden p-6 bg-gray-50 min-h-screen">
-    <h2 class="text-2xl font-bold text-gray-800">Table Content</h2>
-    <p class="text-gray-600">Standings table here.</p>
-    <!-- Build out your full standings table code here directly in HTML -->
+<div id="table-content" class="hidden p-4 bg-black min-h-screen bg-[url('images/back.png')] bg-cover bg-center bg-no-repeat min-h-screen">
+   <div class="p-4 bg-[#0f0f0f]/80 text-white min-h-screen flex justify-center rounded-2xl border border-white/20 backdrop-blur-md shadow-inner shadow-purple-500/10 ring-1 ring-purple-500/20">
+
+  <div class="w-full max-w-4xl">
+    <h1 class="text-2xl font-bold mb-4 text-center text-white">Majors Table</h1>
+    <div class="overflow-x-auto ">
+      <table class="min-w-full border border-gray-700 rounded-lg overflow-hidden">
+       <thead class="bg-gradient-to-br from-purple-700/30 via-purple-800/40 to-[#1e1e1e]/60
+backdrop-blur-md border-b border-purple-500/30 shadow-md shadow-purple-500/30 ring-2 ring-purple-500/40">
+
+
+          <tr>
+            <th class="px-4 py-2 text-left text-gray-300">#</th>
+            <th class="px-4 py-2 text-left text-gray-300">Team</th>
+            <th class="px-4 py-2 text-center text-gray-300">PL</th>
+            <th class="px-4 py-2 text-center text-gray-300">W</th>
+            <th class="px-4 py-2 text-center text-gray-300">D</th>
+            <th class="px-4 py-2 text-center text-gray-300">L</th>
+            <th class="px-4 py-2 text-center text-gray-300">GD</th>
+            <th class="px-4 py-2 text-center text-gray-300">PTS</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-700">
+          <tr class="hover:bg-gray-800 transition">
+            <td class="px-4 py-2">1</td>
+            <td class="px-4 py-2 font-semibold">Real Madrid</td>
+            <td class="text-center px-4 py-2">8</td>
+            <td class="text-center px-4 py-2">7</td>
+            <td class="text-center px-4 py-2">0</td>
+            <td class="text-center px-4 py-2">1</td>
+            <td class="text-center px-4 py-2">+10</td>
+            <td class="text-center px-4 py-2 font-bold text-400">21</td>
+          </tr>
+          <tr class="hover:bg-gray-800 transition">
+            <td class="px-4 py-2">2</td>
+            <td class="px-4 py-2 font-semibold">Barcelona</td>
+            <td class="text-center px-4 py-2">8</td>
+            <td class="text-center px-4 py-2">6</td>
+            <td class="text-center px-4 py-2">1</td>
+            <td class="text-center px-4 py-2">1</td>
+            <td class="text-center px-4 py-2">+13</td>
+            <td class="text-center px-4 py-2 font-bold text-400">19</td>
+          </tr>
+          <tr class="hover:bg-gray-800 transition">
+            <td class="px-4 py-2">3</td>
+            <td class="px-4 py-2 font-semibold">Villarreal</td>
+            <td class="text-center px-4 py-2">8</td>
+            <td class="text-center px-4 py-2">5</td>
+            <td class="text-center px-4 py-2">2</td>
+            <td class="text-center px-4 py-2">1</td>
+            <td class="text-center px-4 py-2">+9</td>
+            <td class="text-center px-4 py-2 font-bold text-400">17</td>
+          </tr>
+          <tr class="hover:bg-gray-800 transition">
+            <td class="px-4 py-2">4</td>
+            <td class="px-4 py-2 font-semibold">Real Betis</td>
+            <td class="text-center px-4 py-2">8</td>
+            <td class="text-center px-4 py-2">5</td>
+            <td class="text-center px-4 py-2">1</td>
+            <td class="text-center px-4 py-2">2</td>
+            <td class="text-center px-4 py-2">+6</td>
+            <td class="text-center px-4 py-2 font-bold text-400">16</td>
+          </tr>
+          <tr class="hover:bg-gray-800 transition">
+            <td class="px-4 py-2">5</td>
+            <td class="px-4 py-2 font-semibold">Atletico Madrid</td>
+            <td class="text-center px-4 py-2">8</td>
+            <td class="text-center px-4 py-2">4</td>
+            <td class="text-center px-4 py-2">1</td>
+            <td class="text-center px-4 py-2">3</td>
+            <td class="text-center px-4 py-2">+5</td>
+            <td class="text-center px-4 py-2 font-bold text-400">13</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 </div>
 
 <!--FIXTURES-->
-<div id="fixtures-content" class="p-0 bg-gray-50 min-h-screen">
-    <!--navbar for date-->
-    <div class="bg-gray-900 text-white py-4 px-6 border-b border-gray-700">
-  <ul class="flex justify-between items-center text-sm font-medium w-full">
-    <li class="flex items-center">
-      <div class="border border-gray-500 rounded p-2 inline-flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-        </svg>
-      </div>
-    </li>
-    <li class="absolute left-1/2 transform -translate-x-1/2">Today</li>
-    <li class="flex items-center">
-      <div class="border border-gray-500 rounded p-2 inline-flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </div>
-    </li>
-  </ul>
-</div>
+<div id="fixtures-content" class="p-0 bg-black min-h-screen bg-[url('images/back.png')] bg-cover bg-center bg-no-repeat min-h-screen">
 
-<!-- Fixtures List -->
- <div class="bg-gray-700 text-white m-2 rounded-md p-4">
-   <!--Fixture-->
-    <div class="flex items-center justify-between p-2 text-sm">
-        <!--teamA-->
-        <div class="flex items-center gap-2">
-            <span>Software E.</span>
-            <img src="
-            " alt="teamA">
-            
-        </div>
-        <!--time-->
-        <div>2:30 <br> PM</div>
-        <!--teamB-->
-        <div class="flex items-center gap-2">
-            <img src="
-            " alt="teamB">
-            <span>Electrical E.</span>
-        </div>
+    <!-- Fixtures Date Navbar -->
+    <div class="bg-black text-white py-4 px-6 border-b border-gray-700">
+      <ul class="flex justify-between items-center text-sm font-medium w-full">
+        <!-- Previous -->
+        <li class="flex items-center">
+          <div id="prev-day" class="border border-gray-500 rounded p-2 inline-flex items-center justify-center cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </div>
+        </li>
+
+        <!-- Current Date -->
+        <li id="current-date-label" class="absolute left-1/2 transform -translate-x-1/2">
+          Today
+        </li>
+
+        <!-- Next -->
+        <li class="flex items-center">
+          <div id="next-day" class="border border-gray-500 rounded p-2 inline-flex items-center justify-center cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </li>
+      </ul>
     </div>
 
-    <!--Fixture-->
-    <div class="flex items-center justify-between p-2 text-sm">
-        <!--teamA-->
-        <div class="flex items-center gap-2">
-            <span>Nursing</span>
-            <img src="
-            " alt="teamA">
-            
-        </div>
-        <!--time-->
-        <div>2:30 <br> PM</div>
-        <!--teamB-->
-        <div class="flex items-center gap-2">
-            <img src="
-            " alt="teamB">
-            <span>Artificial I.</span>
-        </div>
-    </div>
-
-    <!--Fixture-->
-    <div class="flex items-center justify-between p-2 text-sm">
-        <!--teamA-->
-        <div class="flex items-center gap-2">
-            <span>Economics</span>
-            <img src="
-            " alt="teamA">
-            
-        </div>
-        <!--time-->
-        <div>2:30 <br> PM</div>
-        <!--teamB-->
-        <div class="flex items-center gap-2">
-            <img src="
-            " alt="teamB">
-            <span>Medicine</span>
-        </div>
-    </div>
- </div>
+    <!-- Fixtures List Container (EMPTY, JS will fill) -->
+    <div id="fixture-list" class="bg-[#1e1e1e]/70 backdrop-blur-md border border-white/20 shadow-xl rounded-2xl p-4 text-white font-semibold ring-1 ring-white/10 m-[10px]"
+></div>
 </div>
 
 <!--TEAM STATS-->
-<div id="team-stats-content" class="hidden p-6 bg-gray-50 min-h-screen">
-    <h2 class="text-2xl font-bold text-gray-800">Team Stats Content</h2>
-    <p class="text-gray-600">Team statistics here.</p>
-    <!-- Build out your full team stats code here directly in HTML -->
+<div id="team-stats-content" class="hidden bg-[url('images/back.png')] bg-cover bg-center bg-no-repeat min-h-screen">
+    <div class="flex gap-4 flex-col items-center text-white p-4">
+
+    <!-- Card 1: Top Scorer -->
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Top scorer</h2>
+        <div class="text-sm text-gray-400 cursor-pointer">See all ➔</div>
+      </div>
+      <div class="space-y-4">
+        <!-- Player 1 -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+  
+            <div>
+              <p class="text-sm font-medium">Kylian Mbappé</p>
+            </div>
+          </div>
+          <div class="bg-white text-black w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+            9
+          </div>
+        </div>
+
+        <!-- Player 2 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Julián Álvarez</p>
+            </div>
+          </div>
+          <div class="text-sm font-semibold">6</div>
+        </div>
+
+        <!-- Player 3 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Etta Eyong</p>
+            </div>
+          </div>
+          <div class="text-sm font-semibold">5</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Assists -->
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Assists</h2>
+        <div class="text-sm text-gray-400 cursor-pointer">➔</div>
+      </div>
+      <div class="space-y-4">
+        <!-- Player 1 -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Luis Milla</p>
+            </div>
+          </div>
+          <div class="bg-blue-500 text-white w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+            5
+          </div>
+        </div>
+
+        <!-- Player 2 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Vinicius Junior</p>
+            </div>
+          </div>
+          <div class="text-sm font-semibold">4</div>
+        </div>
+
+        <!-- Player 3 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Ruben Vargas</p>
+              
+            </div>
+          </div>
+          <div class="text-sm font-semibold">4</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Goals + Assists -->
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Goals + Assists</h2>
+        <div class="text-sm text-gray-400 cursor-pointer">➔</div>
+      </div>
+      <div class="space-y-4">
+        <!-- Player 1 -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Kylian Mbappé</p>
+              
+            </div>
+          </div>
+          <div class="bg-white text-black w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+            11
+          </div>
+        </div>
+
+        <!-- Player 2 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Vinicius Junior</p>
+              
+            </div>
+          </div>
+          <div class="text-sm font-semibold">9</div>
+        </div>
+
+        <!-- Player 3 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Software Eng.</p>
+            </div>
+          </div>
+          <div class="text-sm font-semibold">8</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!--PLAYER STATS-->
-<div id="player-stats-content" class="hidden p-6 bg-gray-50 min-h-screen">
-    <h2 class="text-2xl font-bold text-gray-800">Player Stats Content</h2>
-    <p class="text-gray-600">Player statistics here.</p>
-    <!-- Build out your full player stats code here directly in HTML -->
-</div>
+<div id="player-stats-content" class="hidden bg-[url('images/back.png')] bg-cover bg-center bg-no-repeat min-h-screen">
+ <div class="flex gap-4 flex-col text-white items-center p-4">
 
-<!-- JS for Navbar Active State and Section Switching -->
-<script>
-  // Navbar links
-  const navLinks = document.querySelectorAll('nav a');
+    <!-- Card 1: Top Scorer -->
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Top scorer</h2>
+        <div class="text-sm text-gray-400 cursor-pointer">See all ➔</div>
+      </div>
+      <div class="space-y-4">
+        <!-- Player 1 -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
   
-  // All content sections
+            <div>
+              <p class="text-sm font-medium">Kylian Mbappé</p>
+              <div class="text-xs text-gray-400 flex items-center gap-1">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
+                Real Madrid
+              </div>
+            </div>
+          </div>
+          <div class="bg-white text-black w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+            9
+          </div>
+        </div>
+
+        <!-- Player 2 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Julián Álvarez</p>
+              <div class="text-xs text-gray-400 flex items-center gap-1">
+                <img src="https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg" alt="Atletico" class="w-4 h-4">
+                Atlético de Madrid
+              </div>
+            </div>
+          </div>
+          <div class="text-sm font-semibold">6</div>
+        </div>
+
+        <!-- Player 3 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Etta Eyong</p>
+              <div class="text-xs text-gray-400 flex items-center gap-1">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Levante_UD_logo.svg" alt="Levante" class="w-4 h-4">
+                Levante
+              </div>
+            </div>
+          </div>
+          <div class="text-sm font-semibold">5</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Assists -->
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Assists</h2>
+        <div class="text-sm text-gray-400 cursor-pointer">➔</div>
+      </div>
+      <div class="space-y-4">
+        <!-- Player 1 -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Luis Milla</p>
+              <div class="text-xs text-gray-400 flex items-center gap-1">
+                <img src="https://upload.wikimedia.org/wikipedia/en/7/76/Getafe_CF_logo.svg" alt="Getafe" class="w-4 h-4">
+                Getafe
+              </div>
+            </div>
+          </div>
+          <div class="bg-blue-500 text-white w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+            5
+          </div>
+        </div>
+
+        <!-- Player 2 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Vinicius Junior</p>
+              <div class="text-xs text-gray-400 flex items-center gap-1">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
+                Real Madrid
+              </div>
+            </div>
+          </div>
+          <div class="text-sm font-semibold">4</div>
+        </div>
+
+        <!-- Player 3 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Ruben Vargas</p>
+              <div class="text-xs text-gray-400 flex items-center gap-1">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Sevilla_CF_logo.svg" alt="Sevilla" class="w-4 h-4">
+                Sevilla
+              </div>
+            </div>
+          </div>
+          <div class="text-sm font-semibold">4</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Goals + Assists -->
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Goals + Assists</h2>
+        <div class="text-sm text-gray-400 cursor-pointer">➔</div>
+      </div>
+      <div class="space-y-4">
+        <!-- Player 1 -->
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Kylian Mbappé</p>
+              <div class="text-xs text-gray-400 flex items-center gap-1">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
+                Real Madrid
+              </div>
+            </div>
+          </div>
+          <div class="bg-white text-black w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+            11
+          </div>
+        </div>
+
+        <!-- Player 2 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Vinicius Junior</p>
+              <div class="text-xs text-gray-400 flex items-center gap-1">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
+                Real Madrid
+              </div>
+            </div>
+          </div>
+          <div class="text-sm font-semibold">9</div>
+        </div>
+
+        <!-- Player 3 -->
+        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+          <div class="flex items-center gap-3">
+            <div>
+              <p class="text-sm font-medium">Etta Eyong</p>
+              <div class="text-xs text-gray-400 flex items-center gap-1">
+                <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Levante_UD_logo.svg" alt="Levante" class="w-4 h-4">
+                Levante
+              </div>
+            </div>
+          </div>
+          <div class="text-sm font-semibold">8</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- JS for Navbar Tabs -->
+<script>
+  const navLinks = document.querySelectorAll('nav a');
   const contentSections = document.querySelectorAll('[id$="-content"]');
   
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent page navigation
-      
-      // Remove active class/border from all
-      navLinks.forEach(l => {
-        l.classList.remove('border-b-2', 'border-purple-400', 'rounded-full');
-      });
-      
-      // Add to clicked
+      e.preventDefault();
+      navLinks.forEach(l => l.classList.remove('border-b-2', 'border-purple-400', 'rounded-full'));
       link.classList.add('border-b-2', 'border-purple-400', 'rounded-full');
-      
-      // Hide all sections
       contentSections.forEach(sec => sec.classList.add('hidden'));
-      
-      // Show targeted section
       const section = link.getAttribute('data-section');
       const targetSection = document.getElementById(`${section}-content`);
-      if (targetSection) {
-        targetSection.classList.remove('hidden');
-      }
+      if (targetSection) targetSection.classList.remove('hidden');
     });
   });
 </script>
 
-<!--To make the calendar show today's date-->
+<!-- JS for Fixtures with Dynamic Today/Yesterday -->
 <script>
-  const daySpan = document.getElementById('current-day');
-  const today = new Date().getDate();
-  daySpan.textContent = today;
+  // Auto detect today and yesterday
+  const todayDate = new Date();
+  const yesterdayDate = new Date();
+  yesterdayDate.setDate(todayDate.getDate() - 1);
+
+  // Helper functions
+  function formatDateKey(date) {
+    return date.toISOString().split("T")[0];
+  }
+
+  function formatDateLabel(date) {
+    const today = new Date();
+    const diff = (date.setHours(0,0,0,0) - today.setHours(0,0,0,0)) / (1000 * 60 * 60 * 24);
+    if (diff === 0) return "Today";
+    if (diff === -1) return "Yesterday";
+    if (diff === 1) return "Tomorrow";
+    const day = date.getDate();
+    const month = date.toLocaleString('en-US', { month: 'short' });
+    return `${day} - ${month}`;
+  }
+
+  // Fixtures for today (dynamic)
+  const fixturesData = {
+    [formatDateKey(todayDate)]: [
+      { teamA: "Software E.", teamB: "Electrical E.", time: "2:30 PM" },
+      { teamA: "Nursing", teamB: "Artificial I.", time: "2:30 PM" },
+      { teamA: "Economics", teamB: "Medicine", time: "2:30 PM" }
+    ]
+  };
+
+  // State
+  let currentDate = new Date();
+
+  function renderFixtures() {
+    const dateLabel = document.getElementById("current-date-label");
+    dateLabel.textContent = formatDateLabel(new Date(currentDate));
+
+    const fixtureContainer = document.getElementById("fixture-list");
+    fixtureContainer.innerHTML = "";
+
+    const dateKey = formatDateKey(new Date(currentDate));
+    const fixtures = fixturesData[dateKey] || [];
+
+    if (fixtures.length === 0) {
+      fixtureContainer.innerHTML = `<p class="text-center py-4">No fixtures for this date.</p>`;
+      return;
+    }
+
+  fixtures.forEach(fix => {
+  fixtureContainer.innerHTML += `
+    <div class="flex flex-col py-2">
+      <div class="grid grid-cols-3 items-center text-sm text-center">
+        <div class="text-left">${fix.teamA}</div>
+        <div class="font-semibold">${fix.time}</div>
+        <div class="text-right">${fix.teamB}</div>
+      </div>
+      <div class="mx-4 my-2 h-px bg-white/10 rounded"></div>
+    </div>
+  `;
+});
+  }
+
+  // Arrow events
+  document.getElementById("prev-day").addEventListener("click", () => {
+    currentDate.setDate(currentDate.getDate() - 1);
+    renderFixtures();
+  });
+
+  document.getElementById("next-day").addEventListener("click", () => {
+    currentDate.setDate(currentDate.getDate() + 1);
+    renderFixtures();
+  });
+
+  // Initial render
+  renderFixtures();
+
+  
+</script>
+
+<!-- JS for Calendar Badge -->
+<script>
+  // Get today's date
+  const today = new Date();
+  const day = today.getDate();
+
+  // Set it in the calendar badge
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("current-day").textContent = day;
+  });
 </script>
 </body>
 </html>
