@@ -7,6 +7,8 @@
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -15,12 +17,38 @@
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        metalmania: ['Metal Mania', 'cursive'],
       }
     }
   }
 }
 
   </script>
+
+  <!--STYLE FOR NAVBAR-->
+  <style>
+  .active-tab {
+    color: white !important;
+    font-family: 'Metal Mania', cursive !important;
+    font-size: large !important;
+    position: relative;
+  }
+
+  /* Subtle rainbow underline like your boxes */
+  .active-tab::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* right under text */
+    left: 0;
+    width: 100%;
+    height: 2px; /* thin line */
+    border-radius: 8px;
+    background: linear-gradient(to right, #ec4899, #facc15, #8b5cf6); /* pink → yellow → purple */
+    
+  }
+</style>
+
+
 </head>
 <body >
    <!-- Header -->
@@ -55,112 +83,180 @@
 
 <!-- Navbar -->
 <nav class="font-poppins bg-black text-white py-4 px-6 border-b border-gray-700">
-    <ul class="flex space-x-8 justify-center text-sm font-medium">
-        <li>
-            <a href="#" data-section="bracket" class="hover:text-purple-400 transition-colors pb-2">Bracket</a>
-        </li>
-        <li>
-            <a href="#" data-section="table" class="hover:text-purple-400 transition-colors pb-2">Table</a>
-        </li>
-        <li>
-            <a href="#" data-section="fixtures" class="border-b-2 border-purple-400 rounded-full hover:text-purple-400 transition-colors pb-2">Fixtures</a>
-        </li>
-        <li>
-            <a href="#" data-section="team-stats" class="hover:text-purple-400 transition-colors pb-2">Team</a>
-        </li>
-        <li>
-            <a href="#" data-section="player-stats" class="hover:text-purple-400 transition-colors pb-2">Player</a>
-        </li>
-    </ul>
+  <ul class="flex space-x-8 justify-center text-sm font-medium">
+    <li>
+      <a href="#" data-section="bracket" class="nav-link pb-2 text-gray-400 hover:text-purple-400 transition">Bracket</a>
+    </li>
+    <li>
+      <a href="#" data-section="table" class="nav-link pb-2 text-gray-400 hover:text-purple-400 transition">Table</a>
+    </li>
+    <li>
+      <a href="#" data-section="fixtures" class="nav-link pb-2 active-tab">
+        Fixtures
+      </a>
+    </li>
+    <li>
+      <a href="#" data-section="team-stats" class="nav-link pb-2 text-gray-400 hover:text-purple-400 transition">Team</a>
+    </li>
+    <li>
+      <a href="#" data-section="player-stats" class="nav-link pb-2 text-gray-400 hover:text-purple-400 transition">Player</a>
+    </li>
+  </ul>
 </nav>
+
 
 <!-- Content Sections -->
 
 <!--BRACKET-->
-<div id="bracket-content" class="hidden p-6 bg-gray-50 min-h-screen">
-    <h2 class="text-2xl font-bold text-gray-800">Bracket Content</h2>
-    <p class="text-gray-600">Tournament bracket here.</p>
+<div id="bracket-content" class="hidden p-6 bg-black min-h-screen">
+  <h2 class="text-2xl font-bold text-white">Sorry,</h2>
+    <h2 class="text-2xl font-bold text-white">Bracket for this tournament is not available at the moment</h2>
+    <p class="text-white">- Fleet -</p>
 </div>
 
 <!--TABLE-->
-<div id="table-content" class="hidden p-4 bg-black min-h-screen">
-   <div class="p-4 bg-[#0f0f0f]/80 text-white min-h-screen flex justify-center rounded-2xl border border-white/20 backdrop-blur-md shadow-inner shadow-purple-500/10 ring-1 ring-purple-500/20">
+<div id="table-content" class="hidden text-white p-4 bg-black min-h-screen">
+  <!-- GROUP BOXES A–H -->
+<div class="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-4 text-white font-poppins">
 
-  <div class="w-full max-w-4xl">
-    <h1 class="text-2xl font-bold mb-4 text-center text-white">Majors Table</h1>
-    <div class="overflow-x-auto ">
-      <table class="min-w-full border border-gray-700 rounded-lg overflow-hidden">
-       <thead class="bg-gradient-to-br from-purple-700/30 via-purple-800/40 to-[#1e1e1e]/60
-backdrop-blur-md border-b border-purple-500/30 shadow-md shadow-purple-500/30 ring-2 ring-purple-500/40">
-
-
-          <tr>
-            <th class="px-4 py-2 text-left text-gray-300">#</th>
-            <th class="px-4 py-2 text-left text-gray-300">Team</th>
-            <th class="px-4 py-2 text-center text-gray-300">PL</th>
-            <th class="px-4 py-2 text-center text-gray-300">W</th>
-            <th class="px-4 py-2 text-center text-gray-300">D</th>
-            <th class="px-4 py-2 text-center text-gray-300">L</th>
-            <th class="px-4 py-2 text-center text-gray-300">GD</th>
-            <th class="px-4 py-2 text-center text-gray-300">PTS</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-700">
-          <tr class="hover:bg-gray-800 transition">
-            <td class="px-4 py-2">1</td>
-            <td class="px-4 py-2 font-semibold">Real Madrid</td>
-            <td class="text-center px-4 py-2">8</td>
-            <td class="text-center px-4 py-2">7</td>
-            <td class="text-center px-4 py-2">0</td>
-            <td class="text-center px-4 py-2">1</td>
-            <td class="text-center px-4 py-2">+10</td>
-            <td class="text-center px-4 py-2 font-bold text-400">21</td>
-          </tr>
-          <tr class="hover:bg-gray-800 transition">
-            <td class="px-4 py-2">2</td>
-            <td class="px-4 py-2 font-semibold">Barcelona</td>
-            <td class="text-center px-4 py-2">8</td>
-            <td class="text-center px-4 py-2">6</td>
-            <td class="text-center px-4 py-2">1</td>
-            <td class="text-center px-4 py-2">1</td>
-            <td class="text-center px-4 py-2">+13</td>
-            <td class="text-center px-4 py-2 font-bold text-400">19</td>
-          </tr>
-          <tr class="hover:bg-gray-800 transition">
-            <td class="px-4 py-2">3</td>
-            <td class="px-4 py-2 font-semibold">Villarreal</td>
-            <td class="text-center px-4 py-2">8</td>
-            <td class="text-center px-4 py-2">5</td>
-            <td class="text-center px-4 py-2">2</td>
-            <td class="text-center px-4 py-2">1</td>
-            <td class="text-center px-4 py-2">+9</td>
-            <td class="text-center px-4 py-2 font-bold text-400">17</td>
-          </tr>
-          <tr class="hover:bg-gray-800 transition">
-            <td class="px-4 py-2">4</td>
-            <td class="px-4 py-2 font-semibold">Real Betis</td>
-            <td class="text-center px-4 py-2">8</td>
-            <td class="text-center px-4 py-2">5</td>
-            <td class="text-center px-4 py-2">1</td>
-            <td class="text-center px-4 py-2">2</td>
-            <td class="text-center px-4 py-2">+6</td>
-            <td class="text-center px-4 py-2 font-bold text-400">16</td>
-          </tr>
-          <tr class="hover:bg-gray-800 transition">
-            <td class="px-4 py-2">5</td>
-            <td class="px-4 py-2 font-semibold">Atletico Madrid</td>
-            <td class="text-center px-4 py-2">8</td>
-            <td class="text-center px-4 py-2">4</td>
-            <td class="text-center px-4 py-2">1</td>
-            <td class="text-center px-4 py-2">3</td>
-            <td class="text-center px-4 py-2">+5</td>
-            <td class="text-center px-4 py-2 font-bold text-400">13</td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- GROUP A -->
+  <div class="relative rounded-2xl m-2 w-full sm:max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+              shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Group A</h2>
+      </div>
+      <div class="space-y-3">
+        <p class="text-sm font-medium">Civil Engineering</p>
+        <p class="text-sm font-medium">Accounting & Finance</p>
+        <div class="h-px bg-white/20"></div>
+        <p class="text-sm font-medium">Mechatronics Eng.</p>
+        <p class="text-sm font-medium">Digital Media & Mrk</p>
+      </div>
     </div>
   </div>
+
+  <!-- GROUP B -->
+  <div class="relative rounded-2xl m-2 w-full sm:max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+              shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Group B</h2>
+      </div>
+      <div class="space-y-3">
+        <p class="text-sm font-medium">Electrical Elect.</p>
+        <p class="text-sm font-medium">Agriculture</p>
+        <div class="h-px bg-white/20"></div>
+        <p class="text-sm font-medium">Digital Game Des.</p>
+        <p class="text-sm font-medium">Petroleum & Natural G.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUP C -->
+  <div class="relative rounded-2xl m-2 w-full sm:max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+              shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Group C</h2>
+      </div>
+      <div class="space-y-3">
+        <p class="text-sm font-medium">Mechanical Eng.</p>
+        <p class="text-sm font-medium">Architecture</p>
+        <div class="h-px bg-white/20"></div>
+        <p class="text-sm font-medium">Economics</p>
+        <p class="text-sm font-medium">Pharmacy</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUP D -->
+  <div class="relative rounded-2xl m-2 w-full sm:max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+              shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Group D</h2>
+      </div>
+      <div class="space-y-3">
+        <p class="text-sm font-medium">Information Sys.Eng.</p>
+        <p class="text-sm font-medium">M I S</p>
+        <div class="h-px bg-white/20"></div>
+        <p class="text-sm font-medium">Nursing</p>
+        <p class="text-sm font-medium">Information Tech.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUP E -->
+  <div class="relative rounded-2xl m-2 w-full sm:max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+              shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Group E</h2>
+      </div>
+      <div class="space-y-3">
+        <p class="text-sm font-medium">Inter. Law</p>
+        <p class="text-sm font-medium">Business Admin.</p>
+        <div class="h-px bg-white/20"></div>
+        <p class="text-sm font-medium">A I Engineering</p>
+        <p class="text-sm font-medium">Industrial Eng.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUP F -->
+  <div class="relative rounded-2xl m-2 w-full sm:max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+              shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Group F</h2>
+      </div>
+      <div class="space-y-3">
+        <p class="text-sm font-medium">Biomedical Eng.</p>
+        <p class="text-sm font-medium">Medicine</p>
+        <div class="h-px bg-white/20"></div>
+        <p class="text-sm font-medium">Tourism & Hotel Mg.</p>
+        <p class="text-sm font-medium">Molecullar Bio.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUP G -->
+  <div class="relative rounded-2xl m-2 w-full sm:max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+              shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Group G</h2>
+      </div>
+      <div class="space-y-3">
+        <p class="text-sm font-medium">Inter. Relations</p>
+        <p class="text-sm font-medium">Computer Engineering</p>
+        <div class="h-px bg-white/20"></div>
+        <p class="text-sm font-medium">Environmental</p>
+        <p class="text-sm font-medium">Software Engineering</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUP H -->
+  <div class="relative rounded-2xl m-2 w-full sm:max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+              shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">Group H</h2>
+      </div>
+      <div class="space-y-3">
+        <p class="text-sm font-medium">Tourism</p>
+        <p class="text-sm font-medium">Computer Engineering</p>
+        <div class="h-px bg-white/20"></div>
+        <p class="text-sm font-medium">Public Administration</p>
+        <p class="text-sm font-medium">Mass Communication</p>
+      </div>
+    </div>
+  </div>
+
 </div>
+
 </div>
 
 <!--FIXTURES-->
@@ -219,317 +315,345 @@ backdrop-blur-md border-b border-purple-500/30 shadow-md shadow-purple-500/30 ri
 <div id="team-stats-content" class="hidden bg-neutral-900 min-h-screen">
     <div class="flex gap-4 flex-col items-center text-white p-4">
 
-    <!-- Card 1: Top Scorer -->
-    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-lg font-semibold">Top scorer</h2>
-        <div class="text-sm text-gray-400 cursor-pointer">See all ➔</div>
-      </div>
-      <div class="space-y-4">
-        <!-- Player 1 -->
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3">
-  
-            <div>
-              <p class="text-sm font-medium">Kylian Mbappé</p>
-            </div>
-          </div>
-          <div class="bg-white text-black w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
-            9
-          </div>
-        </div>
-
-        <!-- Player 2 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Julián Álvarez</p>
-            </div>
-          </div>
-          <div class="text-sm font-semibold">6</div>
-        </div>
-
-        <!-- Player 3 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Etta Eyong</p>
-            </div>
-          </div>
-          <div class="text-sm font-semibold">5</div>
-        </div>
-      </div>
+<!-- Card 1: Top Scorer -->
+<div class="relative rounded-2xl m-2 w-full max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+            shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+  <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold">Top scorer</h2>
+      <div class="text-sm text-gray-400 cursor-pointer">See all ➔</div>
     </div>
-
-    <!-- Card 2: Assists -->
-    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-lg font-semibold">Assists</h2>
-        <div class="text-sm text-gray-400 cursor-pointer">➔</div>
-      </div>
-      <div class="space-y-4">
-        <!-- Player 1 -->
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Luis Milla</p>
-            </div>
-          </div>
-          <div class="bg-blue-500 text-white w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
-            5
+    <div class="space-y-4">
+      <!-- Team 1 -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Inter. Law</p>
           </div>
         </div>
-
-        <!-- Player 2 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Vinicius Junior</p>
-            </div>
-          </div>
-          <div class="text-sm font-semibold">4</div>
-        </div>
-
-        <!-- Player 3 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Ruben Vargas</p>
-              
-            </div>
-          </div>
-          <div class="text-sm font-semibold">4</div>
+        <div class="bg-red-600 text-white w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+          9
         </div>
       </div>
-    </div>
 
-    <!-- Card 3: Goals + Assists -->
-    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-lg font-semibold">Goals + Assists</h2>
-        <div class="text-sm text-gray-400 cursor-pointer">➔</div>
+      <!-- Player 2 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Marketing</p>
+          </div>
+        </div>
+        <div class="text-sm font-semibold">6</div>
       </div>
-      <div class="space-y-4">
-        <!-- Player 1 -->
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Kylian Mbappé</p>
-              
-            </div>
-          </div>
-          <div class="bg-white text-black w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
-            11
-          </div>
-        </div>
 
-        <!-- Player 2 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Vinicius Junior</p>
-              
-            </div>
+      <!-- Player 3 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Civil Engineering</p>
           </div>
-          <div class="text-sm font-semibold">9</div>
         </div>
-
-        <!-- Player 3 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Software Eng.</p>
-            </div>
-          </div>
-          <div class="text-sm font-semibold">8</div>
-        </div>
+        <div class="text-sm font-semibold">5</div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Card 2: Assists -->
+<div class="relative rounded-2xl m-2 w-full max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+            shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+  <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold">Assists</h2>
+      <div class="text-sm text-gray-400 cursor-pointer">➔</div>
+    </div>
+    <div class="space-y-4">
+      <!-- Player 1 -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Civil Engineering</p>
+          </div>
+        </div>
+        <div class="bg-blue-500 text-white w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+          5
+        </div>
+      </div>
+
+      <!-- Player 2 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Inter. Law</p>
+          </div>
+        </div>
+        <div class="text-sm font-semibold">4</div>
+      </div>
+
+      <!-- Player 3 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Software Engineering</p>
+          </div>
+        </div>
+        <div class="text-sm font-semibold">4</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 3: Goals + Assists -->
+<div class="relative rounded-2xl m-2 w-full max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+            shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+  <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold">Goals + Assists</h2>
+      <div class="text-sm text-gray-400 cursor-pointer">➔</div>
+    </div>
+    <div class="space-y-4">
+      <!-- Player 1 -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium"></p>
+          </div>
+        </div>
+        <div class="bg-purple-600 text-white w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+          11
+        </div>
+      </div>
+
+      <!-- Player 2 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Vinicius Junior</p>
+          </div>
+        </div>
+        <div class="text-sm font-semibold">9</div>
+      </div>
+
+      <!-- Player 3 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Software Eng.</p>
+          </div>
+        </div>
+        <div class="text-sm font-semibold">8</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 
 <!--PLAYER STATS-->
 <div id="player-stats-content" class="hidden bg-neutral-900 min-h-screen">
  <div class="flex gap-4 flex-col text-white items-center p-4">
 
-    <!-- Card 1: Top Scorer -->
-    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-lg font-semibold">Top scorer</h2>
-        <div class="text-sm text-gray-400 cursor-pointer">See all ➔</div>
-      </div>
-      <div class="space-y-4">
-        <!-- Player 1 -->
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3">
-  
-            <div>
-              <p class="text-sm font-medium">Kylian Mbappé</p>
-              <div class="text-xs text-gray-400 flex items-center gap-1">
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
-                Real Madrid
-              </div>
-            </div>
-          </div>
-          <div class="bg-white text-black w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
-            9
-          </div>
-        </div>
-
-        <!-- Player 2 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Julián Álvarez</p>
-              <div class="text-xs text-gray-400 flex items-center gap-1">
-                <img src="https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg" alt="Atletico" class="w-4 h-4">
-                Atlético de Madrid
-              </div>
-            </div>
-          </div>
-          <div class="text-sm font-semibold">6</div>
-        </div>
-
-        <!-- Player 3 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Etta Eyong</p>
-              <div class="text-xs text-gray-400 flex items-center gap-1">
-                <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Levante_UD_logo.svg" alt="Levante" class="w-4 h-4">
-                Levante
-              </div>
-            </div>
-          </div>
-          <div class="text-sm font-semibold">5</div>
-        </div>
-      </div>
+   <!-- Card 1: Top Scorer -->
+<div class="relative rounded-2xl m-2 w-full max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+            shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+  <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold">Top scorer</h2>
+      <div class="text-sm text-gray-400 cursor-pointer">See all ➔</div>
     </div>
-
-    <!-- Card 2: Assists -->
-    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-lg font-semibold">Assists</h2>
-        <div class="text-sm text-gray-400 cursor-pointer">➔</div>
-      </div>
-      <div class="space-y-4">
-        <!-- Player 1 -->
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Luis Milla</p>
-              <div class="text-xs text-gray-400 flex items-center gap-1">
-                <img src="https://upload.wikimedia.org/wikipedia/en/7/76/Getafe_CF_logo.svg" alt="Getafe" class="w-4 h-4">
-                Getafe
-              </div>
+    <div class="space-y-4">
+      <!-- Player 1 -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Kylian Mbappé</p>
+            <div class="text-xs text-gray-400 flex items-center gap-1">
+              <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
+              Real Madrid
             </div>
-          </div>
-          <div class="bg-blue-500 text-white w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
-            5
           </div>
         </div>
-
-        <!-- Player 2 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Vinicius Junior</p>
-              <div class="text-xs text-gray-400 flex items-center gap-1">
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
-                Real Madrid
-              </div>
-            </div>
-          </div>
-          <div class="text-sm font-semibold">4</div>
-        </div>
-
-        <!-- Player 3 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Ruben Vargas</p>
-              <div class="text-xs text-gray-400 flex items-center gap-1">
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Sevilla_CF_logo.svg" alt="Sevilla" class="w-4 h-4">
-                Sevilla
-              </div>
-            </div>
-          </div>
-          <div class="text-sm font-semibold">4</div>
+        <div class="bg-red-600 text-white w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+          9
         </div>
       </div>
-    </div>
 
-    <!-- Card 3: Goals + Assists -->
-    <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-lg font-semibold">Goals + Assists</h2>
-        <div class="text-sm text-gray-400 cursor-pointer">➔</div>
+      <!-- Player 2 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Julián Álvarez</p>
+            <div class="text-xs text-gray-400 flex items-center gap-1">
+              <img src="https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg" alt="Atletico" class="w-4 h-4">
+              Atlético de Madrid
+            </div>
+          </div>
+        </div>
+        <div class="text-sm font-semibold">6</div>
       </div>
-      <div class="space-y-4">
-        <!-- Player 1 -->
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Kylian Mbappé</p>
-              <div class="text-xs text-gray-400 flex items-center gap-1">
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
-                Real Madrid
-              </div>
-            </div>
-          </div>
-          <div class="bg-white text-black w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
-            11
-          </div>
-        </div>
 
-        <!-- Player 2 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Vinicius Junior</p>
-              <div class="text-xs text-gray-400 flex items-center gap-1">
-                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
-                Real Madrid
-              </div>
+      <!-- Player 3 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Etta Eyong</p>
+            <div class="text-xs text-gray-400 flex items-center gap-1">
+              <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Levante_UD_logo.svg" alt="Levante" class="w-4 h-4">
+              Levante
             </div>
           </div>
-          <div class="text-sm font-semibold">9</div>
         </div>
-
-        <!-- Player 3 -->
-        <div class="flex items-center justify-between border-t border-gray-700 pt-4">
-          <div class="flex items-center gap-3">
-            <div>
-              <p class="text-sm font-medium">Etta Eyong</p>
-              <div class="text-xs text-gray-400 flex items-center gap-1">
-                <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Levante_UD_logo.svg" alt="Levante" class="w-4 h-4">
-                Levante
-              </div>
-            </div>
-          </div>
-          <div class="text-sm font-semibold">8</div>
-        </div>
+        <div class="text-sm font-semibold">5</div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Card 2: Assists -->
+<div class="relative rounded-2xl m-2 w-full max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+            shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+  <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold">Assists</h2>
+      <div class="text-sm text-gray-400 cursor-pointer">➔</div>
+    </div>
+    <div class="space-y-4">
+      <!-- Player 1 -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Luis Milla</p>
+            <div class="text-xs text-gray-400 flex items-center gap-1">
+              <img src="https://upload.wikimedia.org/wikipedia/en/7/76/Getafe_CF_logo.svg" alt="Getafe" class="w-4 h-4">
+              Getafe
+            </div>
+          </div>
+        </div>
+        <div class="bg-blue-500 text-white w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+          5
+        </div>
+      </div>
+
+      <!-- Player 2 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Vinicius Junior</p>
+            <div class="text-xs text-gray-400 flex items-center gap-1">
+              <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
+              Real Madrid
+            </div>
+          </div>
+        </div>
+        <div class="text-sm font-semibold">4</div>
+      </div>
+
+      <!-- Player 3 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Ruben Vargas</p>
+            <div class="text-xs text-gray-400 flex items-center gap-1">
+              <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Sevilla_CF_logo.svg" alt="Sevilla" class="w-4 h-4">
+              Sevilla
+            </div>
+          </div>
+        </div>
+        <div class="text-sm font-semibold">4</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 3: Goals + Assists -->
+<div class="relative rounded-2xl m-2 w-full max-w-sm bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500
+            shadow-[0_0_10px_-3px_rgba(255,0,128,0.7),0_0_15px_-4px_rgba(255,255,0,0.5),0_0_20px_-5px_rgba(128,0,255,0.6)]">
+  <div class="bg-[#1e1e1e] rounded-2xl p-4 w-full max-w-sm border border-white/20 backdrop-blur-sm shadow-inner shadow-white/10">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-lg font-semibold">Goals + Assists</h2>
+      <div class="text-sm text-gray-400 cursor-pointer">➔</div>
+    </div>
+    <div class="space-y-4">
+      <!-- Player 1 -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Kylian Mbappé</p>
+            <div class="text-xs text-gray-400 flex items-center gap-1">
+              <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
+              Real Madrid
+            </div>
+          </div>
+        </div>
+        <div class="bg-purple-600 text-white w-6 h-6 text-xs font-bold rounded-full flex items-center justify-center">
+          11
+        </div>
+      </div>
+
+      <!-- Player 2 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Vinicius Junior</p>
+            <div class="text-xs text-gray-400 flex items-center gap-1">
+              <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" class="w-4 h-4">
+              Real Madrid
+            </div>
+          </div>
+        </div>
+        <div class="text-sm font-semibold">9</div>
+      </div>
+
+      <!-- Player 3 -->
+      <div class="flex items-center justify-between border-t border-gray-700 pt-4">
+        <div class="flex items-center gap-3">
+          <div>
+            <p class="text-sm font-medium">Etta Eyong</p>
+            <div class="text-xs text-gray-400 flex items-center gap-1">
+              <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Levante_UD_logo.svg" alt="Levante" class="w-4 h-4">
+              Levante
+            </div>
+          </div>
+        </div>
+        <div class="text-sm font-semibold">8</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- JS for Navbar Tabs -->
 <script>
-  const navLinks = document.querySelectorAll('nav a');
+  const navLinks = document.querySelectorAll('.nav-link');
   const contentSections = document.querySelectorAll('[id$="-content"]');
-  
+
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('[data-section="fixtures"]').classList.add('active-tab');
+    const defaultSection = document.getElementById('fixtures-content');
+    if (defaultSection) defaultSection.classList.remove('hidden');
+  });
+
   navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      navLinks.forEach(l => l.classList.remove('border-b-2', 'border-purple-400', 'rounded-full'));
-      link.classList.add('border-b-2', 'border-purple-400', 'rounded-full');
+
+      // Hide all sections
       contentSections.forEach(sec => sec.classList.add('hidden'));
+
+      // Reset all nav links
+      navLinks.forEach(l => l.classList.remove('active-tab', 'text-white'));
+      navLinks.forEach(l => l.classList.add('text-gray-400'));
+
+      // Activate clicked one
+      link.classList.add('active-tab', 'text-white');
+      link.classList.remove('text-gray-400');
+
+      // Show correct section
       const section = link.getAttribute('data-section');
-      const targetSection = document.getElementById(`${section}-content`);
-      if (targetSection) targetSection.classList.remove('hidden');
+      document.getElementById(`${section}-content`).classList.remove('hidden');
     });
   });
 </script>
+
 
 <!-- JS for Fixtures with Dynamic Today/Yesterday -->
 <script>
